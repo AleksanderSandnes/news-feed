@@ -19,6 +19,7 @@
     "preset": "jest-expo"
   },
   "dependencies": {
+    "eslint": "^8.27.0",
     "expo": "~46.0.16",
     "expo-status-bar": "~1.4.0",
     "prettier": "^2.7.1",
