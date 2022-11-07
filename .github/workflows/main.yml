@@ -39,7 +39,7 @@ jobs:
         run: rm -rf node_modules && npm install
 
       - name: Prettier
-        run: npm ci-prettier
+        run: npm run ci-prettier
 
       - name: Lint
         run: npm ci-lint
