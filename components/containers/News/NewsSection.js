@@ -7,8 +7,8 @@ const NewsSection = ({ data }) => {
     return (
         <FlatList
             data={data}
-            renderItem={({item}) => <NewsItem {...item} />}
-            keyExtractor={({id}) => id.toString()}
+            renderItem={({ item }) => <NewsItem {...item} />}
+            keyExtractor={({ id }) => id.toString()}
             horizontal={true}
             showsHorizontalScrollIndicator={false}
             contentContainerStyle={{

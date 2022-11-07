@@ -13,7 +13,7 @@ export default function Home() {
     return (
         <MainContainer>
             <StyledText style={styles.sectionTitle} big>Trending News</StyledText>
-            <NewsSection data={newsData}/>
+            <NewsSection data={newsData} />
         </MainContainer>
     );
 }
