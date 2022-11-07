@@ -12,12 +12,12 @@ const NewsItem = ({ image, title, avatar, author, date, ...props }) => {
             <Image source={image} style={styles.image} />
 
             <View style={styles.bottomSection}>
-                <StyledText style={[{ color: activeColors.accent }, styles.title]} bold>{title}</StyledText>
+                <StyledText numberOfLines={3} style={[{ color: activeColors.accent }, styles.title]} bold>{title}</StyledText>
 
                 <View style={styles.authorRow}>
                     <View style={styles.author}>
                         <Image source={avatar} style={styles.avatar} />
-                        <StyledText>{author}</StyledText>
+                        <StyledText numberOfLines={2} bold>{author}</StyledText>
                     </View>
 
                     <StyledText style={[{ color: activeColors.tertiary }, styles.date]} small>{date}</StyledText>
