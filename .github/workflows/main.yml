@@ -42,7 +42,7 @@ jobs:
         run: npm run ci-prettier
 
       - name: Lint
-        run: npm ci-lint
+        run: npm run ci-lint
 
       - name: Test
-        run: npm ci-test
+        run: npm run ci-test
