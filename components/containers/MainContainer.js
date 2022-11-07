@@ -1,18 +1,19 @@
-import { StyleSheet, SafeAreaView, ScrollView } from "react-native";
-import { colors } from "../../config/theme";
-import { StatusBar } from "expo-status-bar";
+import React from 'react'
+import { StyleSheet, SafeAreaView, ScrollView } from 'react-native'
+import { colors } from '../../config/theme'
+import { StatusBar } from 'expo-status-bar'
 
 const MainContainer = ({ children, style, ...props }) => {
-  let activeColors = colors;
+  const activeColors = colors
 
   return (
     <SafeAreaView style={styles.container}>
       <ScrollView
         style={[
           {
-            backgroundColor: activeColors.primary,
+            backgroundColor: activeColors.primary
           },
-          style,
+          style
         ]}
         showsVerticalScrollIndicator={false}
         {...props}
@@ -21,13 +22,13 @@ const MainContainer = ({ children, style, ...props }) => {
         <StatusBar style="auto" />
       </ScrollView>
     </SafeAreaView>
-  );
-};
+  )
+}
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
-  },
-});
+    flex: 1
+  }
+})
 
-export default MainContainer;
+export default MainContainer
