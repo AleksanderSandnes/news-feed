@@ -1,7 +1,7 @@
-import React from 'react'
-import { FlatList } from 'react-native'
+import React from "react";
+import { FlatList } from "react-native";
 
-import NewsItem from './NewsItem'
+import NewsItem from "./NewsItem";
 
 const NewsSection = ({ data }) => {
   return (
@@ -13,10 +13,10 @@ const NewsSection = ({ data }) => {
       showsHorizontalScrollIndicator={false}
       contentContainerStyle={{
         paddingLeft: 25,
-        paddingTop: 25
+        paddingTop: 25,
       }}
     />
-  )
-}
+  );
+};
 
-export default NewsSection
+export default NewsSection;

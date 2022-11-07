@@ -1,10 +1,10 @@
-import React from 'react'
-import { StyleSheet, TouchableOpacity, Image, View } from 'react-native'
-import { colors } from '../../config/theme'
-import StyledText from '../Texts/StyledText'
+import React from "react";
+import { StyleSheet, TouchableOpacity, Image, View } from "react-native";
+import { colors } from "../../config/theme";
+import StyledText from "../Texts/StyledText";
 
 const NewsItem = ({ image, title, avatar, author, date, ...props }) => {
-  const activeColors = colors
+  const activeColors = colors;
 
   return (
     <TouchableOpacity
@@ -39,50 +39,50 @@ const NewsItem = ({ image, title, avatar, author, date, ...props }) => {
         </View>
       </View>
     </TouchableOpacity>
-  )
-}
+  );
+};
 
 const styles = StyleSheet.create({
   container: {
     height: 370,
     width: 300,
     borderRadius: 25,
-    marginRight: 20
+    marginRight: 20,
   },
   image: {
     width: 300,
     height: 190,
-    borderRadius: 25
+    borderRadius: 25,
   },
   bottomSection: {
     padding: 25,
     flex: 1,
-    justifyContent: 'space-between'
+    justifyContent: "space-between",
   },
   title: {
-    fontSize: 19
+    fontSize: 19,
   },
   authorRow: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    justifyContent: 'space-between'
+    flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "space-between",
   },
   author: {
-    flexDirection: 'row',
-    alignItems: 'center',
+    flexDirection: "row",
+    alignItems: "center",
     marginRight: 25,
-    flex: 3
+    flex: 3,
   },
   avatar: {
     width: 30,
     height: 30,
     borderRadius: 15,
-    marginRight: 10
+    marginRight: 10,
   },
   date: {
-    textAlign: 'right',
-    flex: 2
-  }
-})
+    textAlign: "right",
+    flex: 2,
+  },
+});
 
-export default NewsItem
+export default NewsItem;
