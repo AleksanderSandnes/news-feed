@@ -8,10 +8,10 @@
     "ios": "expo start --ios",
     "web": "expo start --web",
     "eject": "expo eject",
-    "lint": "eslint --ext .js --fix . --ignore-path=.gitignore",
+    "lint": "eslint --ext .jsx --ext .js --fix . --ignore-path=.gitignore",
     "prettier": "prettier --write . --ignore-path=.gitignore",
     "test": "jest --watchAll",
-    "ci-lint": "eslint --ext .js . --ignore-path=.gitignore",
+    "ci-lint": "eslint --ext .jsx --ext .js . --ignore-path=.gitignore",
     "ci-prettier": "prettier --check . --ignore-path=.gitignore",
     "ci-test": "jest --coverage --updateSnapshot"
   },
@@ -21,18 +21,23 @@
   "dependencies": {
     "expo": "~46.0.16",
     "expo-status-bar": "~1.4.0",
-    "prettier": "^2.7.1",
     "react": "18.0.0",
     "react-native": "0.69.6"
   },
   "devDependencies": {
     "@babel/core": "^7.12.9",
     "eslint": "^8.27.0",
+    "eslint-config-airbnb": "^19.0.4",
+    "eslint-config-prettier": "^8.5.0",
     "eslint-config-standard": "^17.0.0",
     "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-jsx-a11y": "^6.6.1",
     "eslint-plugin-n": "^15.5.0",
+    "eslint-plugin-prettier": "^4.2.1",
     "eslint-plugin-promise": "^6.1.1",
-    "eslint-plugin-react": "^7.31.10"
+    "eslint-plugin-react": "^7.31.10",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "prettier": "^2.7.1"
   },
   "private": true
 }
