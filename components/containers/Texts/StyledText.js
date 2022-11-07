@@ -1,9 +1,9 @@
-import React from "react";
-import { Text } from "react-native";
-import { colors } from "../../config/theme";
+import React from 'react'
+import { Text } from 'react-native'
+import { colors } from '../../config/theme'
 
 const StyledText = ({ children, style, small, big, bold, ...props }) => {
-  const activeColors = colors;
+  const activeColors = colors
 
   return (
     <Text
@@ -11,15 +11,15 @@ const StyledText = ({ children, style, small, big, bold, ...props }) => {
         {
           color: activeColors.tint,
           fontSize: small ? 14 : big ? 24 : 16,
-          fontWeight: bold || big ? "bold" : "normal",
+          fontWeight: bold || big ? 'bold' : 'normal'
         },
-        style,
+        style
       ]}
       {...props}
     >
       {children}
     </Text>
-  );
-};
+  )
+}
 
-export default StyledText;
+export default StyledText
