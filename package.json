@@ -13,7 +13,7 @@
     "test": "jest --watchAll",
     "ci-lint": "eslint --ext .jsx --ext .js . --ignore-path=.gitignore",
     "ci-prettier": "prettier --check . --ignore-path=.gitignore",
-    "ci-test": "jest --coverage --updateSnapshot"
+    "ci-test": "jest --coverage --updateSnapshot --passWithNoTests"
   },
   "jest": {
     "preset": "jest-expo"
