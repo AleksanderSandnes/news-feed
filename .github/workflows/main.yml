@@ -23,10 +23,10 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
           cache: 'npm'
-      
+
       - name: Install
         run: rm -rf node_modules && npm install
-     
+
       - name: Prettier
         run: npm run ci-prettier
 
