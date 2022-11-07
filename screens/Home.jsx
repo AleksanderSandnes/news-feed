@@ -5,9 +5,10 @@ import { StyleSheet } from 'react-native';
 import MainContainer from '../components/containers/MainContainer';
 import StyledText from '../components/containers/Texts/StyledText';
 import NewsSection from '../components/containers/News/NewsSection';
+import ExploreSection from '../components/Explore/ExploreSection';
 
 // data
-import { newsData } from '../config/data';
+import { newsData, exploreData } from '../config/data';
 
 const styles = StyleSheet.create({
   sectionTitle: {
@@ -23,6 +24,10 @@ export default function Home() {
         Trending News
       </StyledText>
       <NewsSection data={newsData} />
+      <StyledText style={styles.sectionTitle} big>
+        Explore
+      </StyledText>
+      <ExploreSection data={exploreData} />
     </MainContainer>
   );
 }
