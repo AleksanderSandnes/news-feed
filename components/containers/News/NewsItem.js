@@ -1,7 +1,5 @@
-import { Text, StyleSheet, TouchableOpacity, Image, View } from 'react-native';
+import { StyleSheet, TouchableOpacity, Image, View } from 'react-native';
 import { colors } from '../../config/theme';
-import { StatusBar } from 'expo-status-bar';
-
 import StyledText from '../Texts/StyledText'
 
 const NewsItem = ({ image, title, avatar, author, date, ...props }) => {
