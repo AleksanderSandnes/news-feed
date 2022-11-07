@@ -1,5 +1,6 @@
 import React from 'react';
 import { StyleSheet, TouchableOpacity, Image, View } from 'react-native';
+import { useNavigation } from '@react-navigation/native';
 import { colors } from '../../../config/theme';
 import StyledText from '../Texts/StyledText';
 
@@ -46,11 +47,22 @@ const styles = StyleSheet.create({
   },
 });
 
-function NewsItem({ image, title, avatar, author, date, ...props }) {
+function NewsItem({ image, title, avatar, author, date, content, ...props }) {
+  const navigation = useNavigation();
   const activeColors = colors;
 
   return (
     <TouchableOpacity
+      onPress={() => {
+        navigation.navigate('Details', {
+          image,
+          title,
+          avatar,
+          author,
+          date,
+          content,
+        });
+      }}
       style={[{ backgroundColor: activeColors.secondary }, styles.container]}
       {...props}
     >

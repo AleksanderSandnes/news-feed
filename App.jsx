@@ -1,8 +1,6 @@
 import React from 'react';
-import Home from './screens/Home';
-// import Details from './screens/Details';
-// import Settings from './screens/Settings';
+import RootStack from './navigators/RootStack';
 
 export default function App() {
-  return <Home />;
+  return <RootStack />;
 }

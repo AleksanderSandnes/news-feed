@@ -6,9 +6,6 @@ import MainContainer from '../components/containers/MainContainer';
 import StyledText from '../components/containers/Texts/StyledText';
 import { colors } from '../config/theme';
 
-// data
-import { newsData } from '../config/data';
-
 const styles = StyleSheet.create({
   image: {
     width: '100%',
@@ -49,12 +46,13 @@ const styles = StyleSheet.create({
   },
 });
 
-export default function Details() {
+export default function Details({ route }) {
   const activeColors = colors;
+  const { image, title, avatar, author, date, content } = route?.params;
 
   return (
     <MainContainer style={{ backgroundColor: activeColors.secondary }}>
-      <Image source={newsData[0].image} style={styles.image} />
+      <Image source={image} style={styles.image} />
 
       <View
         style={[
@@ -67,14 +65,14 @@ export default function Details() {
           style={[{ color: activeColors.accent }, styles.title]}
           big
         >
-          {newsData[0].title}
+          {title}
         </StyledText>
 
         <View style={styles.authorRow}>
           <View style={styles.author}>
-            <Image source={newsData[0].avatar} style={styles.avatar} />
+            <Image source={avatar} style={styles.avatar} />
             <StyledText numberOfLines={2} bold>
-              {newsData[0].author}
+              {author}
             </StyledText>
           </View>
 
@@ -82,11 +80,11 @@ export default function Details() {
             style={[{ color: activeColors.tertiary }, styles.date]}
             small
           >
-            {newsData[0].date}
+            {date}
           </StyledText>
         </View>
 
-        <StyledText style={styles.content}>{newsData[0].content}</StyledText>
+        <StyledText style={styles.content}>{content}</StyledText>
       </View>
     </MainContainer>
   );

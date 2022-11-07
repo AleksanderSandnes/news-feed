@@ -30,10 +30,7 @@ function SettingsButton({ label, icon, isActive, ...props }) {
 
   return (
     <TouchableOpacity
-      style={[
-        { backgroundColor: activeColors.secondary },
-        styles.SettingsButton,
-      ]}
+      style={[{ backgroundColor: activeColors.secondary }, styles.settingsItem]}
       {...props}
     >
       <View style={styles.labelGroup}>

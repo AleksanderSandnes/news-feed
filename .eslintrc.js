@@ -18,6 +18,8 @@ module.exports = {
     'no-nested-ternary': 0,
     'global-require': 0,
     'import/prefer-default-export': 0,
+    'no-unsafe-optional-chaining': 0,
+    'react/no-unstable-nested-components': 0,
     'prettier/prettier': 'error',
   },
   settings: {
