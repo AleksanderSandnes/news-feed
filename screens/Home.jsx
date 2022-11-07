@@ -5,7 +5,7 @@ import { StyleSheet } from 'react-native';
 import MainContainer from '../components/containers/MainContainer';
 import StyledText from '../components/containers/Texts/StyledText';
 import NewsSection from '../components/containers/News/NewsSection';
-import ExploreSection from '../components/Explore/ExploreSection';
+import ExploreSection from '../components/containers/Explore/ExploreSection';
 
 // data
 import { newsData, exploreData } from '../config/data';
