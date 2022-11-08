@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import { StyleSheet, View, Switch } from 'react-native';
 
 // components
@@ -7,6 +7,7 @@ import StyledText from '../components/containers/Texts/StyledText';
 import SettingsItem from '../components/containers/Settings/SettingsItem';
 import SettingsButton from '../components/containers/Settings/SettingsButton';
 import { colors } from '../config/theme';
+import { ThemeContext } from '../contexts/ThemeContext';
 
 const styles = StyleSheet.create({
   container: {
@@ -21,10 +22,12 @@ const styles = StyleSheet.create({
 });
 
 export default function Settings() {
-  const activeColors = colors;
-  const [isActive, setIsActive] = useState(false);
+  const { theme, updateTheme } = useContext(ThemeContext);
+  const activeColors = colors[theme.mode];
+  const [isActive, setIsActive] = useState(theme.mode === 'dark');
 
   const handleSwitch = () => {
+    updateTheme();
     setIsActive((previousState) => !previousState);
   };
 
@@ -67,12 +70,23 @@ export default function Settings() {
       </StyledText>
 
       <View style={styles.section}>
-        <SettingsButton label="Light" icon="lightbulb-on" isActive={false} />
-        <SettingsButton label="Dark" icon="weather-night" isActive={false} />
+        <SettingsButton
+          label="Light"
+          icon="lightbulb-on"
+          isActive={theme.mode === 'light' && !theme.system}
+          onPress={() => updateTheme({ mode: 'light' })}
+        />
+        <SettingsButton
+          label="Dark"
+          icon="weather-night"
+          isActive={theme.mode === 'dark' && !theme.system}
+          onPress={() => updateTheme({ mode: 'dark' })}
+        />
         <SettingsButton
           label="System"
           icon="theme-light-dark"
-          isActive={false}
+          isActive={theme.system}
+          onPress={() => updateTheme({ system: true })}
         />
       </View>
     </MainContainer>

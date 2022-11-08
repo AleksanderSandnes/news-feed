@@ -1,5 +1,6 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { createStackNavigator } from '@react-navigation/stack';
+import { ThemeContext } from '../contexts/ThemeContext';
 
 // screens
 import Home from '../screens/Home';
@@ -10,7 +11,8 @@ import { colors } from '../config/theme';
 const HomeStack = createStackNavigator();
 
 function HomeStackScreen() {
-  const activeColors = colors;
+  const { theme } = useContext(ThemeContext);
+  const activeColors = colors[theme.mode];
 
   return (
     <HomeStack.Navigator

@@ -17,7 +17,7 @@ const styles = StyleSheet.create({
   },
   title: {
     fontSize: 19,
-    color: colors.primary,
+    color: colors.light.primary,
     height: '100%',
     width: '100%',
     textAlign: 'center',
@@ -25,7 +25,7 @@ const styles = StyleSheet.create({
     backgroundColor: '#0005',
     borderRadius: 60,
     borderWidth: 2,
-    borderColor: colors.accent,
+    borderColor: colors.light.accent,
   },
 });
 

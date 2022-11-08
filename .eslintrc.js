@@ -20,6 +20,10 @@ module.exports = {
     'import/prefer-default-export': 0,
     'no-unsafe-optional-chaining': 0,
     'react/no-unstable-nested-components': 0,
+    'no-param-reassign': 0,
+    'no-alert': 0,
+    'consistent-return': 0,
+    'react/jsx-no-constructed-context-values': 0,
     'prettier/prettier': 'error',
   },
   settings: {

@@ -1,7 +1,8 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { View, StyleSheet } from 'react-native';
 import { colors } from '../../../config/theme';
 import StyledText from '../Texts/StyledText';
+import { ThemeContext } from '../../../contexts/ThemeContext';
 
 const styles = StyleSheet.create({
   settingsItem: {
@@ -18,7 +19,8 @@ const styles = StyleSheet.create({
 });
 
 function SettingsItem({ children, label }) {
-  const activeColors = colors;
+  const { theme } = useContext(ThemeContext);
+  const activeColors = colors[theme.mode];
 
   return (
     <View

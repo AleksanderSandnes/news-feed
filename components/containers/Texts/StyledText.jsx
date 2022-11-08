@@ -1,9 +1,11 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Text } from 'react-native';
 import { colors } from '../../../config/theme';
+import { ThemeContext } from '../../../contexts/ThemeContext';
 
 function StyledText({ children, style, small, big, bold, ...props }) {
-  const activeColors = colors;
+  const { theme } = useContext(ThemeContext);
+  const activeColors = colors[theme.mode];
 
   return (
     <Text

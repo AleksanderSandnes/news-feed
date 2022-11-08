@@ -1,7 +1,8 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { StyleSheet, SafeAreaView, ScrollView } from 'react-native';
 import { StatusBar } from 'expo-status-bar';
 import { colors } from '../../config/theme';
+import { ThemeContext } from '../../contexts/ThemeContext';
 
 const styles = StyleSheet.create({
   container: {
@@ -10,7 +11,8 @@ const styles = StyleSheet.create({
 });
 
 function MainContainer({ children, style, ...props }) {
-  const activeColors = colors;
+  const { theme } = useContext(ThemeContext);
+  const activeColors = colors[theme.mode];
 
   return (
     <SafeAreaView style={styles.container}>
@@ -25,7 +27,7 @@ function MainContainer({ children, style, ...props }) {
         {...props}
       >
         {children}
-        <StatusBar style="auto" />
+        <StatusBar style={theme.mode === 'dark' ? 'light' : 'dark'} />
       </ScrollView>
     </SafeAreaView>
   );

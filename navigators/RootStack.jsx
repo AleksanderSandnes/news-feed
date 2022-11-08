@@ -1,8 +1,9 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 import HomeStackScreen from './HomeStack';
+import { ThemeContext } from '../contexts/ThemeContext';
 
 // screens
 import Settings from '../screens/Settings';
@@ -11,7 +12,8 @@ import { colors } from '../config/theme';
 const Tab = createBottomTabNavigator();
 
 function RootStack() {
-  const activeColors = colors;
+  const { theme } = useContext(ThemeContext);
+  const activeColors = colors[theme.mode];
 
   return (
     <NavigationContainer>

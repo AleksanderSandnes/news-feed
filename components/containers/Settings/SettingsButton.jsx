@@ -1,8 +1,9 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { TouchableOpacity, StyleSheet, View } from 'react-native';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 import { colors } from '../../../config/theme';
 import StyledText from '../Texts/StyledText';
+import { ThemeContext } from '../../../contexts/ThemeContext';
 
 const styles = StyleSheet.create({
   settingsItem: {
@@ -26,7 +27,8 @@ const styles = StyleSheet.create({
 });
 
 function SettingsButton({ label, icon, isActive, ...props }) {
-  const activeColors = colors;
+  const { theme } = useContext(ThemeContext);
+  const activeColors = colors[theme.mode];
 
   return (
     <TouchableOpacity

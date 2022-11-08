@@ -1,8 +1,9 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { StyleSheet, TouchableOpacity, Image, View } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import { colors } from '../../../config/theme';
 import StyledText from '../Texts/StyledText';
+import { ThemeContext } from '../../../contexts/ThemeContext';
 
 const styles = StyleSheet.create({
   container: {
@@ -49,7 +50,8 @@ const styles = StyleSheet.create({
 
 function NewsItem({ image, title, avatar, author, date, content, ...props }) {
   const navigation = useNavigation();
-  const activeColors = colors;
+  const { theme } = useContext(ThemeContext);
+  const activeColors = colors[theme.mode];
 
   return (
     <TouchableOpacity

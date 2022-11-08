@@ -1,10 +1,11 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { StyleSheet, Image, View } from 'react-native';
 
 // components
 import MainContainer from '../components/containers/MainContainer';
 import StyledText from '../components/containers/Texts/StyledText';
 import { colors } from '../config/theme';
+import { ThemeContext } from '../contexts/ThemeContext';
 
 const styles = StyleSheet.create({
   image: {
@@ -47,7 +48,8 @@ const styles = StyleSheet.create({
 });
 
 export default function Details({ route }) {
-  const activeColors = colors;
+  const { theme } = useContext(ThemeContext);
+  const activeColors = colors[theme.mode];
   const { image, title, avatar, author, date, content } = route?.params;
 
   return (
